@@ -39,3 +39,4 @@ def mid_squares_method(xo1, n):
     print(one, two, three, four, five, six, seven, eight, nine, zero)
 
 mid_squares_method(0.1080762024, 199)
+# uebki
