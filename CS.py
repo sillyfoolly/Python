@@ -1,4 +1,5 @@
 def mid_squares_method(xo1, n):
+    
     one, two, three, four, five, six, seven, eight, nine, zero = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
     print ('Псевдослучайное число', xo1)
     x = xo1 * 10000000
