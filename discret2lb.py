@@ -30,7 +30,7 @@ def FirstMethod(m):
                 trn2[i][j] = 1
 
     if trn2 == trn1:
-        print('\nМатрица симетричного замыкания:')
+        print('\nМатрица транзитивного замыкания:')
         for i in range(4): print(trn2[i])
     else : FirstMethod(trn2)
 
@@ -47,7 +47,7 @@ def SecondMethod(m):
         for j in range(4):
             if trn[i][j] > 1:
                 trn[i][j] = 1               
-    print('\nМатрица симетричного замыкания:')
+    print('\nМатрица транзитивного замыкания:')
     for i in range(4): 
         print(trn[i])
         pwr += sum(trn[i])
