@@ -1,22 +1,3 @@
-def prima():
-    n = 7
-    used = [1, 0, 1, 0, 0, 0, 0]
-    summ = 16
-    a, b = 0, 0
-    for k in range(5):
-        min = 99
-        for i in range(n):
-            if used[i]:
-                for j in range(n):
-                    if used[j] == 0:
-                        if mass[i][j] < min and mass[i][j] != 0:
-                            min = mass[i][j]
-                            a, b = i, j
-        used[b] = 1
-        summ += mass[a][b]
-    print(summ)
-
-    
 def kruskal():
     n = 7
     used = [0, 0, 0, 0, 0, 0, 0]
@@ -35,6 +16,23 @@ def kruskal():
 
     print(summ)
 
+def prima():
+    n = 7
+    used = [1, 0, 1, 0, 0, 0, 0]
+    summ = 16
+    a, b = 0, 0
+    for k in range(5):
+        min = 99
+        for i in range(n):
+            if used[i]:
+                for j in range(n):
+                    if used[j] == 0:
+                        if mass[i][j] < min and mass[i][j] != 0:
+                            min = mass[i][j]
+                            a, b = i, j
+        used[b] = 1
+        summ += mass[a][b]
+    print(summ)
 
 mass = [
     [0, 21, 16, 0, 0, 0, 22],   
