@@ -89,7 +89,9 @@ def fibonacci_method_with_a_delay(n):
     mass = linear_congruent_method(1080762024, 17)
 
     for i in range (17, n):
-        mass.append((mass[i - 5] + mass[i - 17]) % (pow(2, 0)))
+        if mass[i - 5] < mass[i - 17]:
+            mass.append((mass[i - 5] - mass[i - 17]) + 1)
+        else: mass.append((mass[i - 5] - mass[i - 17]))
 
     return mass
 
