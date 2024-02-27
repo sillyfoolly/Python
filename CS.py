@@ -6,20 +6,19 @@ def mid_squares_method(x, n):
     mass = [] 
     mass.append(x)
     for i in range(n - 1):
-        x = x * x * 100000
-        x = (x - (x // 1)) * 10000000000 // 1 / 10000000000 
+        x = float('0.' + f'{(x * x):.17f}'[7:17])
         mass.append(x) 
     return mass
 
 # 2. Проверить полученную последовательность на случайность
 def random_test(mass):
     number = [0] * 10
+    x2 = 0
     for i in mass:
-        x = i * 10000000
-        x = (x - (x // 1)) * 10 // 1
-        x = int(x) 
+        x = int(str(i)[9]) 
         number[x] += 1
-    x2 = pow(number[0] - 20, 2) / 20 + pow(number[1] - 20, 2) / 20 + pow(number[2] - 20, 2) / 20 + pow(number[3] - 20, 2) / 20 + pow(number[4] - 20, 2) / 20 + pow(number[5] - 20, 2) / 20 + pow(number[6] - 20, 2) / 20 + pow(number[7] - 20, 2) / 20 + pow(number[8] - 20, 2) / 20 + pow(number[9] - 20, 2) / 20
+    for i in range(10):
+        x2 = x2 + pow(number[i] - 20, 2) / 20
     if x2 < 16.9:
         print(f"\nA) Последовательность случайна ({x2:.1f} < 16.9)")
     else: print(f"\nA) Последовательность не случайна ({x2:.1f} > 16.9)")
@@ -27,12 +26,14 @@ def random_test(mass):
 # 3. Проверить гипотезу о равномерном распределении
 def equal_spread(mass):
     interval = [0] * 10
+    x2 = 0
     for i in mass:
         interval[int(i*10)] += 1
-    x22 = pow(interval[0] - 20, 2) / 20 + pow(interval[1] - 20, 2) / 20 + pow(interval[2] - 20, 2) / 20 + pow(interval[3] - 20, 2) / 20 + pow(interval[4] - 20, 2) / 20 + pow(interval[5] - 20, 2) / 20 + pow(interval[6] - 20, 2) / 20 + pow(interval[7] - 20, 2) / 20 + pow(interval[8] - 20, 2) / 20 + pow(interval[9] - 20, 2) / 20
-    if x22 < 16.9:
-        print(f'\nB) Последовательность равномерно распределенна ({x22:.1f} < 16.9)')
-    else: print(f'\nB) Последовательность распределенна не равномерно  ({x22:.1f} > 16.9)')
+    for i in range(10):
+        x2 = x2 + pow(interval[0] - 20, 2) / 20
+    if x2 < 16.9:
+        print(f'\nB) Последовательность равномерно распределенна ({x2:.1f} < 16.9)')
+    else: print(f'\nB) Последовательность распределенна не равномерно  ({x2:.1f} > 16.9)')
 
 # 4. Коэффициент автокорреляции 1-го порядка
 def coefficient(mass):
