@@ -14,7 +14,7 @@ def kruskal():
         used[b] = 1
         summ += mass[a][b]
 
-    print(summ)
+    print(f'Вес остова: {summ}')
 
 def prima():
     n = 7
@@ -32,7 +32,7 @@ def prima():
                             a, b = i, j
         used[b] = 1
         summ += mass[a][b]
-    print(summ)
+    print(f'Вес остова: {summ}')
 
 mass = [
     [0, 21, 16, 0, 0, 0, 22],   
