@@ -18,10 +18,10 @@ def kruskal():
 
 def prima():
     n = 7
-    used = [1, 0, 1, 0, 0, 0, 0]
-    summ = 16
+    used = [1, 0, 0, 0, 0, 0, 0]
+    summ = 0
     a, b = 0, 0
-    for k in range(5):
+    for k in range(6):
         min = 99
         for i in range(n):
             if used[i]:
