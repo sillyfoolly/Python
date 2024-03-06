@@ -39,12 +39,13 @@ def equal_spread(mass):
     for i in range(10):
         x2 = x2 + pow(interval[0] - 20, 2) / 20
 
-    for i in interval: print(i)
+    # for i in interval: print(i)
 
     if x2 < 16.9: print(f'\nB) Последовательность равномерно распределенна ({x2:.1f} < 16.9)')
 
     else: print(f'\nB) Последовательность распределенна не равномерно  ({x2:.1f} > 16.9)')
 
+    print(f'{interval}')
 # 4. Коэффициент автокорреляции 1-го порядка
 def coefficient(mass):
     up, down = 0, 0
@@ -56,13 +57,12 @@ def coefficient(mass):
         down += pow(mass[i] - medium, 2)
 
     r = up/down
-    print(f'\n r = {r:.4f}')
     t = abs(r * math.sqrt((len(mass)-2)/(1-r*r)))
     tc = abs((200-2) * math.sqrt((0.05-2)/(1-(200-2)*(200-2))))
 
-    if t < tc: print (f'\nC) Последовательность статистически независима (t = {t:.4f} < {tc:.4f})')
+    if t < tc: print (f'\nC) Последовательность статистически независима (r = {r:.4f}, t = {t:.4f} < {tc:.4f})')
 
-    else: print (f'\nC) Последовательность не является статистически независимой (t = {t:.4f} > {tc:.4f})')
+    else: print (f'\nC) Последовательность не является статистически независимой (r = {r:.4f}, t = {t:.4f} > {tc:.4f})')
 
 # 5. Наличие/отсутсвие периода в    
 def period(mass):
