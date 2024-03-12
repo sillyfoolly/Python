@@ -46,6 +46,7 @@ def equal_spread(mass):
     else: print(f'\nB) Последовательность распределенна не равномерно  ({x2:.1f} > 16.9)')
 
     print(f'{interval}')
+
 # 4. Коэффициент автокорреляции 1-го порядка
 def coefficient(mass):
     up, down = 0, 0
