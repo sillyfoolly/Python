@@ -37,7 +37,7 @@ def equal_spread(mass):
         interval[int(i*10)] += 1
 
     for i in range(10):
-        x2 = x2 + pow(interval[0] - 20, 2) / 20
+        x2 = x2 + pow(interval[i] - 20, 2) / 20
 
     # for i in interval: print(i)
 
