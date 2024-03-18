@@ -30,7 +30,7 @@ def Proth_List(k, n):
     l = []
     for i in range(n):
         a = k * pow(2, i) + 1
-    l.append(a)
+        l.append(a)
     return l
 
 list_of_nums = Proth_List(3, 10000)
@@ -38,7 +38,7 @@ list_of_nums = Proth_List(3, 10000)
 for n in list_of_nums:
     first_digit = str(n)[0]
     letters[first_digit] += 1
-
+print(letters)
 x = list(letters.keys())
 y = [round(val / 10000, 4) for val in letters.values()]
 
