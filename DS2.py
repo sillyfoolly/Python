@@ -82,18 +82,22 @@ def task3(mass):
     
 def task4(mass):
     newmass = []
-    x = 0; n = 0; c = 0
+    c = []
+    x = 0; n = 0; 
 
     for i in mass:
-        x += i - 6
+        x += i
         n += 1
         if n == 12:
-            newmass.append(100 + 10 * x)
-            c += 1
+            newmass.append(100 + 10 * (x - 6))
             x = 0
             n = 0
 
-    print(newmass, c)
+    for i in newmass:
+        if i > 120:
+            c.append(i)
+
+    print(f'\nОбращений не менее 120 - {len(c)} раз: {c}')
 
 
 def main():
