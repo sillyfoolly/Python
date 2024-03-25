@@ -3,9 +3,6 @@ import numpy as np
 from numpy import sqrt
 
 way = []
-
-# X=[10, 10, 100, 100 ,30, 20, 20, 50, 50, 85, 85, 75, 35, 25, 30, 47, 50]
-# Y=[5, 85, 0, 90, 50, 55, 50, 75 ,25, 50, 20, 80, 25, 70, 10, 50, 100]
 A, X, Y = np.loadtxt('XQF131.txt', delimiter=' ', unpack=True)
 
 n=len(X)
